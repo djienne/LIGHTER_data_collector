@@ -1,0 +1,39 @@
+version: '3.8'
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.48.16.0/22
+services:
+  lighter-data-collector:
+    build: .
+    container_name: lighter-collector
+    restart: unless-stopped
+    volumes:
+      # Mount data directory to persist CSV files
+      - ./lighter_data:/app/lighter_data
+      # Mount logs directory to persist log files
+      - ./logs:/app/logs
+    environment:
+      # Add any environment variables here if needed
+      - PYTHONUNBUFFERED=1
+    # Uncomment the following lines to customize crypto tickers
+    # You can override the script's default tickers by mounting a custom version
+    # volumes:
+    #   - ./custom_gather_lighter_data.py:/app/gather_lighter_data.py
+    #   - ./data:/app/lighter_data
+    #   - ./logs:/app/logs
+
+    # Health check to ensure the container is running properly
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; exit(0 if os.path.exists('/app/logs/debug.log') else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+# Uncomment to add a monitoring service
+# volumes:
+#   data:
+#   logs:
