@@ -36,3 +36,23 @@ The script automatically creates `lighter_data/` for CSV output and `logs/` for 
 ├── lighter_data/       # CSV output data
 └── logs/               # Log files
 ```
+
+## Monitoring & Troubleshooting
+
+- **Check service health**: `docker-compose ps`
+- **Troubleshoot errors**: Check container logs with `docker-compose logs lighter-data-collector`.
+- **Permission issues**: Ensure Docker has write permissions to the project directory.
+
+## Market Making Parameters
+
+### calculate_avellaneda_parameters.py
+Implements the Avellaneda-Stoikov optimal market making model from "High-frequency trading in a limit order book" (2008). This script calculates optimal bid/ask spreads and reservation prices based on:
+
+- **Volatility (σ)**: Market price volatility analysis
+- **Order Intensity (A, k)**: Market order arrival rate modeling
+- **Risk Aversion (γ)**: Optimized via backtesting different values
+
+**Usage**: `python calculate_avellaneda_parameters.py [TICKER] --hours [HOURS]`
+
+### avellaneda_parameters_BTC.json
+Generated output containing calculated market making parameters including optimal bid/ask prices, spreads, and risk parameters for algorithmic trading strategies.
