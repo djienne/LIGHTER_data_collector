@@ -1,0 +1,33 @@
+{
+    "ticker": "BTC",
+    "timestamp": "2025-09-18T00:17:05.659000",
+    "market_data": {
+        "mid_price": 116314.4,
+        "sigma": 0.009804686819585315,
+        "A": 0.16541754035728445,
+        "k": 0.0019298723221992911
+    },
+    "optimal_parameters": {
+        "gamma": 0.05121
+    },
+    "current_state": {
+        "time_remaining": 0.3333333333333333,
+        "inventory": 1,
+        "hours_window": 8,
+        "ma_window": 3
+    },
+    "calculated_values": {
+        "reservation_price": 116314.39999835902,
+        "gap": 1.6409758245572448e-06,
+        "spread_base": 129.48540258737737,
+        "half_spread": 64.74270129368868
+    },
+    "limit_orders": {
+        "ask_price": 116379.14269801172,
+        "bid_price": 116249.65729542436,
+        "delta_a": 64.74269965271286,
+        "delta_b": 64.7427029346645,
+        "delta_a_percent": 0.05566180941715975,
+        "delta_b_percent": 0.05566181223878085
+    }
+}
