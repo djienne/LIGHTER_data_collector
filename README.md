@@ -37,12 +37,6 @@ The script automatically creates `lighter_data/` for CSV output and `logs/` for 
 └── logs/               # Log files
 ```
 
-## Monitoring & Troubleshooting
-
-- **Check service health**: `docker-compose ps`
-- **Troubleshoot errors**: Check container logs with `docker-compose logs lighter-data-collector`.
-- **Permission issues**: Ensure Docker has write permissions to the project directory.
-
 ## Market Making Parameters
 
 ### calculate_avellaneda_parameters.py
