@@ -2,6 +2,8 @@
 
 A Docker-containerized Python script for collecting real-time trade and order book data from the Lighter DEX API and saving it to CSV files.
 
+Affiliate link to Support this project : ⚡Trade on Lighter – Spot & Perpetuals, 100% decentralized, no KYC, and ZERO fees – [https://app.lighter.xyz/?referral=FREQTRADE](https://app.lighter.xyz/?referral=FREQTRADE) (I’ll give you 100% kickback with this link)
+
 ## Quick Start
 
 ### Docker (Recommended)
